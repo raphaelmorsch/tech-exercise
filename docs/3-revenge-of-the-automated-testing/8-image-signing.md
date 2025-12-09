@@ -8,36 +8,39 @@
 
 ## Before starting, generate your keys
 
-1. Generate a keypair to use for signing images. It expects you to enter a password for private key. Feel free to select anything you like :)
+Generate a key-pair to use for signing images. It expects you to enter a password for private key. Feel free to select anything you like :)
 
-    ```bash
-    cd /tmp
-    cosign generate-key-pair k8s://${TEAM_NAME}-ci-cd/${TEAM_NAME}-cosign 
-    ```
+```bash
+cd /tmp
+cosign generate-key-pair k8s://<TEAM_NAME>-ci-cd/<TEAM_NAME>-cosign 
+```
 
-    You should get an output like this:
-    <div class="highlight" style="background: #f7f7f7">
-    <pre><code class="language-bash">
-    $ cosign generate-key-pair k8s://${TEAM_NAME}-ci-cd/${TEAM_NAME}-cosign 
-    Enter password for private key:
-    Enter again:
-    Successfully created secret cosign in namespace <TEAM_NAME>-ci-cd
-    Public key written to cosign.pub
-    </code></pre></div>
+😱 If `cosign` command returns error, that means you logged out of the cluster so please run the below command and then run the cosign command again.
 
-    You just generated two keys (one private key, one public key). Private key is used to sign the images and it is automatically saved as a secret in your `ci-cd` namespace alongside the password you choose. Public key is used to verify the signed images. You can share your public key for people to verify your images but private one should not be shared or at least sealed before storing publicly.
+```bash
+oc login --server=https://api.${CLUSTER_DOMAIN##apps.}:6443 -u <USER_NAME> -p <PASSWORD>
+```
 
-    <p class="tip">
-    🐌 THIS IS NOT GITOPS - The generated private key is stored in a Kubernetes secret in you <TEAM_NAME>-ci-cd project. We'll leave it as an exercise to the reader to extract and store this as a SealedSecret instead! 🐎
-    </p>
+✅ You should get an output like this:
 
-    <p class="tip">
-    😱 If `cosign` command returns error, that means you logged out of the cluster so please run the below command and then run the cosign command again.
-    </p>
+```bash
+$ cosign generate-key-pair k8s://<TEAM_NAME>-ci-cd/<TEAM_NAME>-cosign
+Enter password for private key:
+Enter again:
+Successfully created secret cosign in namespace <TEAM_NAME>-ci-cd
+Public key written to cosign.pub
+```
 
-    ```bash
-    oc login --server=https://api.${CLUSTER_DOMAIN##apps.}:6443 -u <USER_NAME> -p <PASSWORD>
-    ```
+You just generated two keys:
+
+* **Private key** is used to sign the images and it is automatically saved as a secret in your `ci-cd` namespace alongside the password you choose. 
+* **Public key** is used to verify the signed images. 
+You can share your public key for people to verify your images but private one should not be shared or at least sealed before storing publicly.
+
+<p class="tip">
+🐌 THIS IS NOT GITOPS - The generated private key is stored in a Kubernetes secret in you <TEAM_NAME>-ci-cd project. We'll leave it as an exercise to the reader to extract and store this as a SealedSecret instead! 🐎
+</p>
+
 
 Now let's proceed to extend the pipelines with image signing step.
 
