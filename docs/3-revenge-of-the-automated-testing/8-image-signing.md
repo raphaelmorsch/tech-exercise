@@ -12,7 +12,7 @@ Generate a key-pair to use for signing images. It expects you to enter a passwor
 
 ```bash
 cd /tmp
-cosign generate-key-pair k8s://${TEAM_NAME}-ci-cd/${TEAM_NAME}-cosign 
+cosign generate-key-pair k8s://<TEAM_NAME>-ci-cd/<TEAM_NAME>-cosign 
 ```
 
 😱 If `cosign` command returns error, that means you logged out of the cluster so please run the below command and then run the cosign command again.
@@ -24,7 +24,7 @@ oc login --server=https://api.${CLUSTER_DOMAIN##apps.}:6443 -u <USER_NAME> -p <P
 ✅ You should get an output like this:
 
 ```bash
-$ cosign generate-key-pair k8s://${TEAM_NAME}-ci-cd/${TEAM_NAME}-cosign 
+$ cosign generate-key-pair k8s://<TEAM_NAME>-ci-cd/<TEAM_NAME>-cosign
 Enter password for private key:
 Enter again:
 Successfully created secret cosign in namespace <TEAM_NAME>-ci-cd

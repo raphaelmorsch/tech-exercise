@@ -21,7 +21,7 @@ In this exercise, we'll use [Syft](https://github.com/anchore/syft) to generate 
 
     ```bash
     cd /tmp
-    cosign generate-key-pair k8s://${TEAM_NAME}-ci-cd/${TEAM_NAME}-cosign 
+    cosign generate-key-pair k8s://<TEAM_NAME>-ci-cd/<TEAM_NAME>-cosign 
     ```
 
     😱 If `cosign` command returns error, that means you logged out of the cluster so please run the below command and then run the cosign command again.
@@ -33,7 +33,7 @@ In this exercise, we'll use [Syft](https://github.com/anchore/syft) to generate 
     ✅ You should get an output like this:
 
     ```bash
-    $ cosign generate-key-pair k8s://${TEAM_NAME}-ci-cd/${TEAM_NAME}-cosign 
+    $ cosign generate-key-pair k8s://<TEAM_NAME>-ci-cd/<TEAM_NAME>-cosign 
     Enter password for private key:
     Enter again:
     Successfully created secret cosign in namespace <TEAM_NAME>-ci-cd
