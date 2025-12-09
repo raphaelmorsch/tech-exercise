@@ -20,7 +20,7 @@
     class getCat(HttpUser):
         @task
         def cat(self):
-            self.client.get("/cats", verify=False)
+            self.client.get("/cats", verify=True)
 
     @events.quitting.add_listener
     def _(environment, **kw):
@@ -63,12 +63,12 @@
           type: string
       steps:
         - name: load-testing
-          image: registry.access.redhat.com/ubi9/python-39:latest
+          image: registry.access.redhat.com/ubi9/python-312:latest
           workingDir: $(workspaces.output.path)/$(params.WORK_DIRECTORY)
           script: |
             #!/usr/bin/env bash
-            pip3 install locust
-            locust --headless --users 10 --spawn-rate 1 -H https://$(params.APPLICATION_NAME)-$(params.TEAM_NAME)-test.{{ .Values.cluster_domain }} --run-time 1m --loglevel INFO --only-summary 
+            pip install locust
+            locust --headless --users 10 --spawn-rate 1 -H https://$(params.APPLICATION_NAME)-$(params.TEAM_NAME)-test.{{ .Values.cluster_domain }} --run-time 1m --loglevel INFO --only-summary
     EOF
     ```
 
