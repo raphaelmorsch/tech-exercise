@@ -92,22 +92,20 @@
 
     ![cosign-image-signing](images/cosign-image-signing.png)
 
-5. Let's verify the signed image with the public key. Make sure you use the right `APP VERSION` for the image. (`1.3.1` in this case)
+5. Let's verify the signed image with the public key. Make sure you use the right `APP VERSION` for the image. (`1.3.2` in this case)
 
     ```bash
     cd /projects/pet-battle-api
     oc registry login $(oc registry info) --insecure=true
-    cosign verify --key k8s://<TEAM_NAME>-ci-cd/<TEAM_NAME>-cosign default-route-openshift-image-registry.<CLUSTER_DOMAIN>/<TEAM_NAME>-test/pet-battle-api:1.3.1 --allow-insecure-registry --insecure-ignore-tlog
+    cosign verify --key k8s://<TEAM_NAME>-ci-cd/<TEAM_NAME>-cosign default-route-openshift-image-registry.<CLUSTER_DOMAIN>/<TEAM_NAME>-test/pet-battle-api:1.3.2 --allow-insecure-registry --insecure-ignore-tlog
     ```
 
     The output should be like:
 
-    <div class="highlight" style="background: #f7f7f7">
-    <pre><code class="language-bash">
-    Verification for default-route-openshift-image-registry.<CLUSTER_DOMAIN>/<TEAM_NAME>-test/pet-battle-api:1.3.1 --
+    ```bash
+    Verification for default-route-openshift-image-registry.<CLUSTER_DOMAIN>/<TEAM_NAME>-test/pet-battle-api:1.3.2 --
     The following checks were performed on each of these signatures:
-      - The cosign claims were validated
-      - The signatures were verified against the specified public key
-      - Any certificates were verified against the Fulcio roots.
+     - The cosign claims were validated
+     - The signatures were verified against the specified public key
     {"critical":{"identity":{"docker-reference":"default-route-openshift-image-registry.<CLUSTER_DOMAIN>/<TEAM_NAME>-test/pet-battle-api"},"image":{"docker-manifest-digest":"sha256:1545e1d2cf0afe5df99fe5f1d39eef8429a2018c3734dd3bdfcac5a068189e39"},"type":"cosign container image signature"},"optional":null}
-    </code></pre></div>
+    ```
