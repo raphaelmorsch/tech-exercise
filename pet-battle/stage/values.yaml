@@ -1,6 +1,5 @@
 release: "stage"
 source: "http://nexus:8081/repository/helm-charts/"
-
 ##############
 # Argo Apps declaration
 #############
@@ -14,5 +13,25 @@ applications:
     source_path: keycloak
     values:
       app_domain: apps.cluster-b65lf.b65lf.sandbox5265.opentlc.com
-
   # Pet Battle Apps
+  pet-battle-api:
+    name: pet-battle-api
+    enabled: true
+    source: https://petbattle.github.io/helm-charts # http://nexus:8081/repository/helm-charts
+    chart_name: pet-battle-api
+    source_ref: 1.5.0 # helm chart version
+    values:
+      image_name: pet-battle-api
+      image_version: latest
+      hpa:
+        enable: false
+      servicemonitor: false
+  pet-battle:
+    name: pet-battle
+    enabled: true
+    source: https://petbattle.github.io/helm-charts
+    chart_name: pet-battle
+    source_ref: 1.0.6
+    values:
+      image_version: latest
+      config_map: '{ "catsUrl": "https://pet-battle-api-sefazmg-stage.apps.cluster-b65lf.b65lf.sandbox5265.opentlc.com", "tournamentsUrl": "https://pet-battle-tournament-sefazmg-stage.apps.cluster-b65lf.b65lf.sandbox5265.opentlc.com", "matomoUrl": "https://matomo-sefazmg-ci-cd.apps.cluster-b65lf.b65lf.sandbox5265.opentlc.com/", "keycloak": { "url": "https://keycloak-sefazmg-stage.apps.cluster-b65lf.b65lf.sandbox5265.opentlc.com/auth/", "realm": "pbrealm", "clientId": "pbclient", "redirectUri": "http://localhost:4200/tournament", "enableLogging": true } }'
