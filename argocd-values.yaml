@@ -1,0 +1,4 @@
+ignoreHelmHooks: true
+operator: []
+namespaces:
+  - sefazmg-ci-cd
