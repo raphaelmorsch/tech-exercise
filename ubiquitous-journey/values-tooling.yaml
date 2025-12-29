@@ -75,6 +75,24 @@ applications:
 
 
   # Sealed Secrets
+  - name: sealed-secrets
+    enabled: true
+    source: https://redhat-cop.github.io/helm-charts
+    chart_name: helper-sealed-secrets
+    source_ref: "1.0.3"
+    values:
+      secrets:
+        # Additional secrets will be added to this list throughout the exercises.
+        - name: git-auth
+          type: kubernetes.io/basic-auth
+          annotations:
+            tekton.dev/git-0: https://gitlab-ce.apps.cluster-b65lf.b65lf.sandbox5265.opentlc.com
+          labels:
+            credential.sync.jenkins.openshift.io: "true"
+          data:
+            username: <YOUR_SEALED_SECRET_USERNAME>
+            password: <YOUR_SEALED_SECRET_PASSWORD>
+
 
 
   # Tekton Pipelines
