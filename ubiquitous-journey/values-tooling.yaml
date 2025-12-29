@@ -101,8 +101,8 @@ applications:
           labels:
             credential.sync.jenkins.openshift.io: "true"
           data:
-            username: <YOUR_SEALED_SECRET_USERNAME>
-            password: <YOUR_SEALED_SECRET_PASSWORD>
+            username: AgAxlJ0PDAg+AgAQMl+dUjJ+YDITpprvUKcX6gp2M//H+ZouWoJ4qfJOkibyTNttdOXp0bPWxXNnOq1Q8rI1uLM8ae0LFU+V5HdnLgcNCxPobmsjdgq/42f3N1lqQhxUgz0gyKEf4zsyeNHnAmDnTdhN94NdGYVAC3s5X0IsWiwDO6MMMutWO8wkT0jMfSbKmRrDR1c9NzYlH6xNMCBPFv2HMaj4rk0TRLSTpKgry7AyzjMZJ9/bESy/Y6loYVIzWjbTSBpvclDoxgn0k0XGm/sUXvinRqp7pCCr8WJQhvzA7v9QzzQp/GKi+GYo4KAT5M4rFZzqS+OsWAnECFdLUm72cwfMedTtExs8VasCgCqJBsxxtG0xKatZwzUCSSj+eaQy92J78H61w/rPumg+J5YgB+VNUj6h86bAqvswV0+voCGdinFsEyIr9e4g4ASwn+3ZF6J1juh/RaRJBC5lL5Og/s11xfWdOoRz9+nq1y5C2z80ixiNIWJt5K2Zdez94FbXp3bMeiTmu9bj9RS7Nito83LHTtuzQex+4umrLYqWZXnh/T8tZQ28eiKIRTjcbBuq8eMQxw/qvnSTASs112dbr2FGUettDURiPrD0onc7Js9gn//dEu+lGxY5q8yfXWYzPNIqXX+P6CUWypk1Cyhmqpl5XaNFu3Dk5RGsxB4LSQy0KBBSzJwRuc+i3NyxA2c7BN4qIQ==
+            password: AgAXSn7a79oiTCPQlBaYi4r7JOSSwnm5CggTx4Gy4sbOwCWqkTeh+u/xvPWiVGpoPQi0HIpa6ofXym2LvnS3wHYhi2/52spIyr1lnzWYGLg9+HVoesaqVlTbnRfYuvuQ3/lvahm4EyKt34E0WTIkbDDoE0d8qMdpB1aa/2JR1Oq4iWfPda3bk8PCY8S69aByfvCObM2fz56iydGz8mYx61F3jZQeOZSMurtEvVzWy2kAzi5pclAbSV1Im+2DoOR2rViLZxZnvTpQqCseA6yVLc0o1qH0oEq8LzDrTvymD6q9nKj+nC8Rt0psXI2y7tC0RetS2h7C/oeQYReJOKVj9PdyWEcpzhCF9Xq0sHChxXTgaAbV8sZucY+nvkFV3KW/Ymf/qbVDEVLjNM1o6NRtJBqXJC9Rh+C4zFuwgWcFoZ3Hy4DcGjHyGc2MOgQb65Zl0owMYa3NLGhNIrJ5SkNehBc7O+uERNTnzifPnjrVcScvf0UBZ7UGf56IX9Qq5r7Ll8PRIrioTagPgwEMvra0onDn/TFqgNxut32jcncuaqOxTK8Y3M8JGUN9S5XhE+PEk8XgReOG4LnQ1oBwuP2HS9yFZCwcei+c3p+V5dStonjX9EpJZ7bJhZjwAT+N/K/kePCLzD1MBvr2bncqfazuO707dftvtBKTkcn2F3j51yt1w1mBlAbqqbVcVig3+SFnsTMONtdZWXp1j6RxUdWMVfNkH4NcrwigE+wCH4CADr0X8/D9eHrkSXJRn+eSjN8AaWc6dcw=
 
 
 
