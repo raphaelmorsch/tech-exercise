@@ -32,5 +32,7 @@ applications:
     source: http://nexus.sefazmg-ci-cd.svc.cluster.local:8081/repository/helm-charts
     source_ref: 1.0.6
     values:
-      image_version: latest
+      image_version: 1.2.0
       config_map: '{ "catsUrl": "https://pet-battle-api-sefazmg-test.apps.cluster-b65lf.b65lf.sandbox5265.opentlc.com", "tournamentsUrl": "https://pet-battle-tournament-sefazmg-test.apps.cluster-b65lf.b65lf.sandbox5265.opentlc.com", "matomoUrl": "https://matomo-sefazmg-ci-cd.apps.cluster-b65lf.b65lf.sandbox5265.opentlc.com/", "keycloak": { "url": "https://keycloak-sefazmg-test.apps.cluster-b65lf.b65lf.sandbox5265.opentlc.com/auth/", "realm": "pbrealm", "clientId": "pbclient", "redirectUri": "http://localhost:4200/tournament", "enableLogging": true } }'
+      image_namespace: sefazmg-test
+      image_repository: image-registry.openshift-image-registry.svc:5000
