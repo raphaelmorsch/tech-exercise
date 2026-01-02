@@ -1,0 +1,12 @@
+apiVersion: console.openshift.io/v1
+kind: ConsoleLink
+metadata:
+  name: argocd
+spec:
+  applicationMenu:
+    section: CI/CD
+    imageURL: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+  href: https://argocd-server-sefazmg-ci-cd.apps.cluster-b65lf.b65lf.sandbox5265.opentlc.com
+  location: ApplicationMenu
+  text: Argo CD
+

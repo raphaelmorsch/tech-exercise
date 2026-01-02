@@ -1,0 +1,12 @@
+apiVersion: console.openshift.io/v1
+kind: ConsoleLink
+metadata:
+  name: jenkins
+spec:
+  applicationMenu:
+    section: CI/CD
+    imageURL: https://ftp-nyc.osuosl.org/pub/jenkins/art/jenkins-logo/favicon.ico
+  href: https://jenkins-sefazmg-ci-cd.apps.cluster-b65lf.b65lf.sandbox5265.opentlc.com
+  location: ApplicationMenu
+  text: Jenkins
+

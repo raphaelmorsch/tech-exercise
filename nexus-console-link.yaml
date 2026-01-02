@@ -1,0 +1,12 @@
+apiVersion: console.openshift.io/v1
+kind: ConsoleLink
+metadata:
+  name: nexus
+spec:
+  applicationMenu:
+    section: CI/CD
+    imageURL: https://cdn-ilebjhg.nitrocdn.com/thZLVtXSTwRshLnYnqbEVLWBbpKKTJRb/assets/images/optimized/rev-0dcc810/opsera.ai/wp-content/uploads/2025/07/5f2af61146c55b6e172fa5b3_NexusRepo_Icon.png
+  href: https://nexus-sefazmg-ci-cd.apps.cluster-b65lf.b65lf.sandbox5265.opentlc.com
+  location: ApplicationMenu
+  text: Sonatype Nexus
+
